@@ -1,8 +1,6 @@
 package com.narxoz.rpg.factory;
+import com.narxoz.rpg.character.*;
 import com.narxoz.rpg.character.Character;
-import com.narxoz.rpg.character.Warrior;
-import com.narxoz.rpg.character.Mage;
-import com.narxoz.rpg.character.Healer;
 
 public class CharacterFactory {
     public Character createCharacter(String type, String name) {
@@ -10,6 +8,7 @@ public class CharacterFactory {
         if (type.equalsIgnoreCase("warrior")){
             return new Warrior(name);} else if (type.equalsIgnoreCase("mage")){
             return new Mage(name);} else if (type.equalsIgnoreCase("healer")){
-            return new Healer(name);}
+            return new Healer(name);}else if (type.equalsIgnoreCase("archer")) { // Добавляем сюда!
+            return new Archer(name);}
         return null;}
 }

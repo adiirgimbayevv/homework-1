@@ -8,4 +8,5 @@ public interface Character{
     void displayStats();
     void useSpecialAbility();
     void equipWeapon(Weapon weapon);
+
 }

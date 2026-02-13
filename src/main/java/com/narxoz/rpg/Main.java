@@ -21,11 +21,19 @@ public class Main {
             warrior.displayStats();
             warrior.useSpecialAbility();}
         System.out.println("-----------------------");
+
         if (mage!=null){
             mage.equipWeapon(magicSet.createWeapon());
             System.out.println(mage.getName()+" put on "+magicSet.createArmor().getArmorInfo());
             mage.displayStats();
             mage.useSpecialAbility();
+        }System.out.println("-----------------------");
+
+        Character archer=charFactory.createCharacter("archer", "Alucard");
+        if (archer!=null) {
+            archer.equipWeapon(medievalSet.createWeapon());
+            archer.displayStats();
+            archer.useSpecialAbility();
         }
     }
 }
