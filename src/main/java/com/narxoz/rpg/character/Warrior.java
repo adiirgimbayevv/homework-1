@@ -1,17 +1,17 @@
 package com.narxoz.rpg.character;
+import com.narxoz.rpg.equipment.Armor;
 import com.narxoz.rpg.equipment.Weapon;
 
 public class Warrior implements Character{
     private String name;
     private int health;
-    private int mana;
     private int strength;
     private Weapon equippedWeapon;
+    private Armor armor;
 
     public Warrior(String name){
         this.name=name;
         this.health=120;
-        this.mana=20;
         this.strength=70;
     }
     @Override
@@ -20,19 +20,22 @@ public class Warrior implements Character{
     @Override
     public int getHealth(){
         return health;
+    }@Override
+    public void equipArmor(Armor armor) {
+        this.armor=armor;
+        System.out.println(name+" puts on heavy armor!");
     }
     @Override
-    public void displayStats(){
-        System.out.println("=== Warrior Profile ===");
-        System.out.println("Name: "+name);
-        System.out.println("Health: "+health);
-        System.out.println("Mana: "+mana);
-        System.out.println("Strength: "+strength);
+    public void displayStats() {
+        System.out.println("Warrior: " + name + " (HP: " + getHealth() + ")");
+        System.out.println("Stats -> Strength: " + strength);
+        if (equippedWeapon != null) {
+            System.out.println("Weapon: " + equippedWeapon.getWeaponInfo());
+        }
 
-        if (equippedWeapon!=null){
-            System.out.println("Weapon: "+equippedWeapon.getWeaponInfo()+"(Damage: "+equippedWeapon.getDamage()+")");
-        } else{System.out.println("Weapon: Bare hands");}
-        System.out.println("--------------------");
+        if (armor != null) {
+            System.out.println("Armor: " + armor.getArmorInfo());
+        }
     }
     @Override
     public void useSpecialAbility() {

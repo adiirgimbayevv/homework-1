@@ -1,5 +1,7 @@
 package com.narxoz.rpg.character;
 import com.narxoz.rpg.equipment.Weapon;
+import com.narxoz.rpg.equipment.Armor;
+
 
 public class Healer implements Character{
     private String name;
@@ -11,6 +13,9 @@ public class Healer implements Character{
     }
     @Override public String getName() { return name; }
     @Override public int getHealth() { return health;
+    }@Override
+    public void equipArmor(Armor armor) {
+        System.out.println(getName() + " is trying on armor...");
     }
     @Override
     public void displayStats(){

@@ -16,8 +16,17 @@ public class Archer implements Character {
     @Override
     public void equipWeapon(Weapon weapon) { this.weapon=weapon; }
     @Override
-    public void displayStats(){
-        System.out.println("Archer: "+name+" (HP: "+getHealth()+")");}
+    public void equipArmor(Armor armor) {
+        this.armor = armor;
+    }
+    @Override
+    public void displayStats() {
+        System.out.println("Archer: "+name+" (HP: " + getHealth()+")");
+        if (weapon!=null) {
+            System.out.println("Weapon: "+weapon.getWeaponInfo());}
+        if (armor!=null) {
+            System.out.println("Armor: "+armor.getArmorInfo());}
+    }
     @Override
     public void useSpecialAbility() {
         System.out.println(name + " shoots an arrows!");}

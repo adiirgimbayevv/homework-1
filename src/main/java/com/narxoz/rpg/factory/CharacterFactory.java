@@ -3,7 +3,7 @@ import com.narxoz.rpg.character.*;
 import com.narxoz.rpg.character.Character;
 
 public class CharacterFactory {
-    public Character createCharacter(String type, String name) {
+    public static Character createCharacter(String type, String name) {
         if (type==null) return null;
         if (type.equalsIgnoreCase("warrior")){
             return new Warrior(name);} else if (type.equalsIgnoreCase("mage")){
